@@ -1,4 +1,3 @@
-const covid19ImpactEstimator = (data) => {
   const {
     region: {
       avgDailyIncomeInUsd
@@ -103,10 +102,9 @@ const covid19ImpactEstimator = (data) => {
     impact,
     severeImpact
   };
-};
 
 const covid19ImpactEstimator = (data) => {
-  const estimator = chain(
+  const estimator = chain (
   
     // Challange 1
     estimateCurrentlyInfected,
