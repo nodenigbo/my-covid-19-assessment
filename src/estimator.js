@@ -44,59 +44,59 @@ const covid19ImpactEstimator = (data) => {
 
   // Challange two
 
-//   const ImpactRequetTime = impact.infectionsByRequestedTime * 0.15;
-//   const severeImpactRequestTime = severeImpact.infectionsByRequestedTime * 0.15;
+  //   const ImpactRequetTime = impact.infectionsByRequestedTime * 0.15;
+  //   const severeImpactRequestTime = severeImpact.infectionsByRequestedTime * 0.15;
+  
+  //   impact.severCasesByRequestedTime = Math.trunc(ImpactRequetTime);
+  //   severeImpact.severCasesByRequestedTime = Math.trunc(severeImpactRequestTime);
+  
+  //   const bedsAvailable = totalHospital * 0.35;
+  //   const impactHospitalBedValue = bedsAvailable - ImpactRequetTime;
+  //   const severeImpactHospitalValue = bedsAvailable - severeImpactRequestTime;
+  
+  //   impact.hospitalBedsByRequestedTime = Math.trunc(impactHospitalBedValue);
+  //   severeImpact.hospitalBedsByRequestedTime = Math.trunc(severeImpactHospitalValue);
+  
+  //   // Challange Three
 
-//   impact.severCasesByRequestedTime = Math.trunc(ImpactRequetTime);
-//   severeImpact.severCasesByRequestedTime = Math.trunc(severeImpactRequestTime);
-
-//   const bedsAvailable = totalHospital * 0.35;
-//   const impactHospitalBedValue = bedsAvailable - ImpactRequetTime;
-//   const severeImpactHospitalValue = bedsAvailable - severeImpactRequestTime;
-
-//   impact.hospitalBedsByRequestedTime = Math.trunc(impactHospitalBedValue);
-//   severeImpact.hospitalBedsByRequestedTime = Math.trunc(severeImpactHospitalValue);
-
-//   // Challange Three
-
-//   const impactCasesForICUCases = impact.infectionsByRequestedTime * 0.05;
-//   const severeImpactCasesForICUCases = severeImpact.infectionsByRequestedTime * 0.05;
-//   const impactVentillatorCases = impact.infectionsByRequestedTime * 0.02;
-//   const severeImpactVentillatorCases = severeImpact.infectionsByRequestedTime * 0.02;
-
-//   impact.casesForICUByRequestedTime = Math.trunc(impactCasesForICUCases);
-//   severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpactCasesForICUCases);
-//   impact.casesForVentillatorsByRequestedTime = Math.trunc(impactVentillatorCases);
-//   severeImpact.casesForVentillatorsByRequestedTime = Math.trunc(severeImpactVentillatorCases);
-
-//   let newDay;
-//   const calculate = population * avgDailyIncomeInUsd;
-
-//   if (periodType === 'months') {
-//     newDay = timeToElapse * 30;
-//     impact.dollarsInFlight = (
-//       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
-//     );
-//     severeImpact.dollarsInFlight = (
-//       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
-//     );
-//   } else if (periodType === 'weeks') {
-//     newDay = timeToElapse * 7;
-//     impact.dollarsInFlight = (
-//       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
-//     );
-//     severeImpact.dollarsInFlight = (
-//       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
-//     );
-//   } else if (periodType === 'days') {
-//     newDay = timeToElapse * 1;
-//     impact.dollarsInFlight = (
-//       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
-//     );
-//     severeImpact.dollarsInFlight = (
-//       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
-//     );
-//   }
+  //   const impactCasesForICUCases = impact.infectionsByRequestedTime * 0.05;
+  //   const severeImpactCasesForICUCases = severeImpact.infectionsByRequestedTime * 0.05;
+  //   const impactVentillatorCases = impact.infectionsByRequestedTime * 0.02;
+  //   const severeImpactVentillatorCases = severeImpact.infectionsByRequestedTime * 0.02;
+  
+  //   impact.casesForICUByRequestedTime = Math.trunc(impactCasesForICUCases);
+  //   severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpactCasesForICUCases);
+  //   impact.casesForVentillatorsByRequestedTime = Math.trunc(impactVentillatorCases);
+  //   severeImpact.casesForVentillatorsByRequestedTime = Math.trunc(severeImpactVentillatorCases);
+  
+  //   let newDay;
+  //   const calculate = population * avgDailyIncomeInUsd;
+  
+  //   if (periodType === 'months') {
+  //     newDay = timeToElapse * 30;
+  //     impact.dollarsInFlight = (
+  //       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
+  //     );
+  //     severeImpact.dollarsInFlight = (
+  //       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
+  //     );
+  //   } else if (periodType === 'weeks') {
+  //     newDay = timeToElapse * 7;
+  //     impact.dollarsInFlight = (
+  //       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
+  //     );
+  //     severeImpact.dollarsInFlight = (
+  //       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
+  //     );
+  //   } else if (periodType === 'days') {
+  //     newDay = timeToElapse * 1;
+  //     impact.dollarsInFlight = (
+  //       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
+  //     );
+  //     severeImpact.dollarsInFlight = (
+  //       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
+  //     );
+  //   }
 
   return {
     data,
