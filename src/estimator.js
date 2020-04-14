@@ -10,7 +10,7 @@ const data = {
   reportedCases: 674,
   population: 66622705,
   totalHospital: 1380614
-  };
+};
 
 const covid19ImpactEstimator = () => {
   const impact = {};
@@ -20,21 +20,21 @@ const covid19ImpactEstimator = () => {
 
   // Calculating impact and severImpact for currently infected people
 
-  impact.currentlyInfectedPeople = Math.trunc(reportedCases * 10);
-  severeImpact.currentlyInfectedPeople = Math.trunc(reportedCases * 50);
+  impact.currentlyInfectedPeople = Math.trunc(data.reportedCases * 10);
+  severeImpact.currentlyInfectedPeople = Math.trunc(data.reportedCases * 50);
 
   // Calculating based on Requested Time Elapsed
 
   let timeElapsed;
-  switch (periodType.trim().toLowerCase()) {
+  switch (data.periodType.trim().toLowerCase()) {
     case 'months':
-      timeElapsed = Math.trunc((timeElapsed * 30) / 3);
+      timeElapsed = Math.trunc((data.timeElapsed * 30) / 3);
       break;
     case 'weeks':
-      timeElapsed = Math.trunc((timeElapsed * 7) / 3);
+      timeElapsed = Math.trunc((data.timeElapsed * 7) / 3);
       break;
     case 'days':
-      timeElapsed = Math.trunc(timeElapsed / 3);
+      timeElapsed = Math.trunc(data.timeElapsed / 3);
       break;
     default:
       break;
@@ -54,7 +54,7 @@ const covid19ImpactEstimator = () => {
   impact.severCasesByRequestedTime = Math.trunc(ImpactRequetTime);
   severeImpact.severCasesByRequestedTime = Math.trunc(severeImpactRequestTime);
 
-  const bedsAvailable = totalHospital * 0.35;
+  const bedsAvailable = data.totalHospital * 0.35;
   const impactHospitalBedValue = bedsAvailable - ImpactRequetTime;
   const severeImpactHospitalValue = bedsAvailable - severeImpactRequestTime;
 
@@ -74,26 +74,26 @@ const covid19ImpactEstimator = () => {
   severeImpact.casesForVentillatorsByRequestedTime = Math.trunc(severeImpactVentillatorCases);
 
   let newDay;
-  const calculate = population * avgDailyIncomeInUsd;
+  const calculate = data.population * data.avgDailyIncomeInUsd;
 
-  if (periodType === 'months') {
-    newDay = timeToElapse * 30;
+  if (data.periodType === 'months') {
+    newDay = data.timeToElapse * 30;
     impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
     );
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
-  } else if (periodType === 'weeks') {
-    newDay = timeToElapse * 7;
+  } else if (data.periodType === 'weeks') {
+    newDay = data.timeToElapse * 7;
     impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
     );
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
-  } else if (periodType === 'days') {
-    newDay = timeToElapse * 1;
+  } else if (data.periodType === 'days') {
+    newDay = data.timeToElapse * 1;
     impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
     );
