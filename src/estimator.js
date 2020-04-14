@@ -80,8 +80,7 @@ const covid19ImpactEstimator = (data) => {
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
-  }
-  else if (periodType === 'weeks') {
+  } else if (periodType === 'weeks') {
     newDay = timeToElapse * 7;
     impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
@@ -89,8 +88,7 @@ const covid19ImpactEstimator = (data) => {
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
-  }
-  else if (periodType === 'months') {
+  } else if (periodType === 'months') {
     newDay = timeToElapse * 30;
 
     impact.dollarsInFlight = (
