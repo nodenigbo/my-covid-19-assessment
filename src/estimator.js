@@ -10,7 +10,7 @@ const covid19ImpactEstimator = (data) => {
       totalHospital
   } = data;  
   const impact = {};
-  const severImpact = {};
+  const severeImpact = {};
     
   // Challange one
   //calculating impact and severImpact for currently infected people  
@@ -58,21 +58,23 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForVentillatorsByRequestedTime = Math.trunc(severeImpactVentillatorCases);  
   let newDay;
   const calculate = population * avgDailyIncomeInUsd;
-  if(periodType === 'days') {
+  if (periodType === 'days') {
       newDay = timeToElapse * 1;
-      impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay);
-      severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay);
+      impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * calculate) /newDay);
+      severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * calculate) /newDay);
 
   }
-  else if(periodType === 'weeks') {
+  else if (periodType === 'weeks') {
       newDay = timeToElapse * 7;
-      impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay);
-      severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay);
+      impact.dollarsInFlight = 
+      Math.trunc((impact.infectionsByRequestedTime * calculate) /newDay);
+      severeImpact.dollarsInFlight = 
+      Math.trunc((severeImpact.infectionsByRequestedTime * calculate) /newDay);
   }
-  else if(periodType === 'months') {
+  else if (periodType === 'months') {
       newDay = timeToElapse * 30;
-      impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay);
-      severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay);
+      impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * calculate) /newDay);
+      severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * calculate) /newDay);
   }  
   return {
       data,
