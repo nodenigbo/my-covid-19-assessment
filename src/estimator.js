@@ -12,7 +12,7 @@ const data = {
   totalHospital: 1380614
   };
 
-const covid19ImpactEstimator = (data) => {
+const covid19ImpactEstimator = () => {
   const impact = {};
   const severeImpact = {};
 
