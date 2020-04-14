@@ -11,10 +11,10 @@ const data = {
   population: 66622705,
   totalHospital: 1380614
 };
+const impact = {};
+const severeImpact = {};
 
 const covid19ImpactEstimator = () => {
-  const impact = {};
-  const severeImpact = {};
 
   // Challange one
 
