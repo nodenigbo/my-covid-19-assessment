@@ -13,9 +13,7 @@ const data = {
 };
 const impact = {};
 const severeImpact = {};
-
 const covid19ImpactEstimator = () => {
-
   // Challange one
 
   // Calculating impact and severImpact for currently infected people
@@ -105,13 +103,13 @@ const covid19ImpactEstimator = () => {
   return {
     data,
     impact: {
-        currentlyInfectedPeople: Math.trunc(data.reportedCases * 10),
-        infectionsByRequestedTime: impact.currentlyInfectedPeople * (2 ** timeElapsed),
+      currentlyInfectedPeople: Math.trunc(data.reportedCases * 10),
+      infectionsByRequestedTime: impact.currentlyInfectedPeople * (2 ** timeElapsed)
     },
     severeImpact: {
-        currentlyInfectedPeople: Math.trunc(data.reportedCases * 50),
-        infectionsByRequestedTime: impact.currentlyInfectedPeople * (2 ** timeElapsed)
-    },
+      currentlyInfectedPeople: Math.trunc(data.reportedCases * 50),
+      infectionsByRequestedTime: impact.currentlyInfectedPeople * (2 ** timeElapsed)
+    }
   };
 };
 export default covid19ImpactEstimator;
