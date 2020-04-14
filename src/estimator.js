@@ -73,33 +73,33 @@ const covid19ImpactEstimator = (data) => {
   if (periodType === 'days') {
     newDay = timeToElapse * 1;
 
-    impact.dollarsInFlight = {
+    impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
-    };
-    severeImpact.dollarsInFlight = {
+    );
+    severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
-    };
+    );
   }
 
   else if (periodType === 'weeks') {
     newDay =timeToElapse * 7;
-    impact.dollarsInFlight = {
+    impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
-    };
-    severeImpact.dollarsInFlight = {
+    );
+    severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
-    };
+    );
  }
 
   else if (periodType === 'months') {
     newDay = timeToElapse * 30;
 
-    impact.dollarsInFlight = {
+    impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
-    };
-    severeImpact.dollarsInFlight = {
+    );
+    severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
-    };
+    );
   }
 
   return {
