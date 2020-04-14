@@ -2,13 +2,13 @@ const covid19ImpactEstimator = (data) => {
   const {
     region: {
       avgDailyIncomeInUsd
-},
+    },
     periodType,
     timeToElapse,
     reportedCases,
     population,
     totalHospital
-  } = data;  
+  } = data;
   const impact = {};
   const severeImpact = {};
 
@@ -39,7 +39,8 @@ const covid19ImpactEstimator = (data) => {
   // time Elapsed as Infections grow
 
   impact.infectionsByRequestedTime = impact.currentlyInfectedPeople * (2 ** timeElapsed);
-  severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfectedPeople *(2 ** timeElapsed);
+  severeImpact.infectionsByRequestedTime = (
+    severeImpact.currentlyInfectedPeople * (2 ** timeElapsed));
 
   // Challange two
 
@@ -61,7 +62,7 @@ const covid19ImpactEstimator = (data) => {
   const impactCasesForICUCases = impact.infectionsByRequestedTime * 0.05;
   const severeImpactCasesForICUCases = severeImpact.infectionsByRequestedTime * 0.05;
   const impactVentillatorCases = impact.infectionsByRequestedTime * 0.02;
-  const severeImpactVentillatorCases = severeImpact.infectionsByRequestedTime * 0.02; 
+  const severeImpactVentillatorCases = severeImpact.infectionsByRequestedTime * 0.02;
 
   impact.casesForICUByRequestedTime = Math.trunc(impactCasesForICUCases);
   severeImpact.casesForICUByRequestedTime = Math.trunc(severeImpactCasesForICUCases);
@@ -79,17 +80,19 @@ const covid19ImpactEstimator = (data) => {
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
+
   }
 
   else if (periodType === 'weeks') {
-    newDay =timeToElapse * 7;
+    newDay = timeToElapse * 7;
     impact.dollarsInFlight = (
       Math.trunc((impact.infectionsByRequestedTime * calculate) / newDay)
     );
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
- }
+    
+  }
 
   else if (periodType === 'months') {
     newDay = timeToElapse * 30;
@@ -100,6 +103,7 @@ const covid19ImpactEstimator = (data) => {
     severeImpact.dollarsInFlight = (
       Math.trunc((severeImpact.infectionsByRequestedTime * calculate) / newDay)
     );
+
   }
 
   return {
