@@ -1,12 +1,12 @@
 const covid19ImpactEstimator = (data) => {
   data = {
     region: {
-      name: "Africa",
+      name: 'Africa',
       avgAge: 19.7,
       avgDailyIncomeInUsd: 5,
       avgDailyIncomePopulation: 0.71
     },
-    periodType: "days",
+    periodType: 'days',
     timeToElapse: 58,
     reportedCases: 674,
     population: 66622705,
