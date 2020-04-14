@@ -104,8 +104,14 @@ const covid19ImpactEstimator = () => {
 
   return {
     data,
-    impact: {},
-    severeImpact: {}
+    impact: {
+        currentlyInfectedPeople: Math.trunc(data.reportedCases * 10),
+        infectionsByRequestedTime: impact.currentlyInfectedPeople * (2 ** timeElapsed),
+    },
+    severeImpact: {
+        currentlyInfectedPeople: Math.trunc(data.reportedCases * 50),
+        infectionsByRequestedTime: impact.currentlyInfectedPeople * (2 ** timeElapsed)
+    },
   };
 };
 export default covid19ImpactEstimator;
