@@ -14,7 +14,7 @@ const covid19ImpactEstimator = (data) => {
     const severImpact = {};
     
     // Challange one
-    //calculating impact and severImpact for currently infected people
+    //calculating impact and severImpact for currently infected peoples
 
     impact.currentlyInfectedPeople = Math.trunc( reportedCases * 10);
     severeImpact.currentlyInfectedPeople = Math.trunc( reportedCases * 50);
